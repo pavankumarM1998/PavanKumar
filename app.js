@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Stop observing once revealed
+                observer.unobserve(entry.target);
             }
         });
     }, {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
-    const links = document.querySelectorAll('.nav-link, .btn-contact');
+    const links = document.querySelectorAll('.nav-link');
 
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close menu when a link is clicked (mobile)
     links.forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
@@ -62,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       4. DYNAMIC TYPING EFFECT
+       4. DYNAMIC TYPING EFFECT (DATA ENGINEERING & AZURE ONLY)
        ========================================================================== */
-    const roles = ["Senior Data Engineer", "BI Specialist", "Data Analyst", "Database Developer"];
+    const roles = ["Data Engineering", "Azure Data Factory", "Azure Cloud Solutions", "Data Warehousing", "Enterprise ETL Pipelines"];
     const rolesText = document.getElementById('roles-text');
     let roleIndex = 0;
     let charIndex = 0;
@@ -72,35 +71,31 @@ document.addEventListener('DOMContentLoaded', () => {
     let typingSpeed = 100;
 
     function typeEffect() {
+        if (!rolesText) return;
         const currentRole = roles[roleIndex];
         
         if (isDeleting) {
-            // Delete characters
             rolesText.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
-            typingSpeed = 50; // Speed up deleting
+            typingSpeed = 50;
         } else {
-            // Write characters
             rolesText.textContent = currentRole.substring(0, charIndex + 1);
             charIndex++;
             typingSpeed = 100;
         }
 
         if (!isDeleting && charIndex === currentRole.length) {
-            // End of word, pause before deleting
             typingSpeed = 2000;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
-            // Word deleted, move to next role
             isDeleting = false;
             roleIndex = (roleIndex + 1) % roles.length;
-            typingSpeed = 500; // Small pause before writing new word
+            typingSpeed = 500;
         }
 
         setTimeout(typeEffect, typingSpeed);
     }
 
-    // Start the typing animation
     typeEffect();
 
     /* ==========================================================================
@@ -210,13 +205,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    /* ==========================================================================
+       6. CERTIFICATIONS DATA & MODAL SYSTEM (MICROSOFT & CODEBASICS VERIFIED)
+       ========================================================================== */
+    const certificationsData = [
+        {
+            badge: "Microsoft Certified",
+            issuer: "Microsoft Official Credential",
+            title: "Microsoft Certified: Fabric Data Engineer Associate",
+            status: "Verified Credential",
+            certId: "DP-600",
+            certUrl: "https://learn.microsoft.com/credentials/certifications/fabric-data-engineer-associate/",
+            desc: "Demonstrates expertise in designing, creating, and managing enterprise analytics solutions using Microsoft Fabric, OneLake, Data Factory pipelines, and PySpark.",
+            details: "Validates end-to-end data platform architecture in Microsoft Fabric. Demonstrates proficiency in ingesting and transforming data with Fabric Data Factory & Spark notebooks, configuring OneLake delta tables, building DirectLake semantic models in Power BI, and establishing Medallion architecture (Bronze, Silver, Gold).",
+            skills: ["Microsoft Fabric", "OneLake", "Delta Lake", "Fabric Data Factory", "PySpark", "DirectLake", "Dataflows Gen2"],
+            previewImg: "fabric_certified_badge.png"
+        },
+        {
+            badge: "Codebasics Certified",
+            issuer: "Codebasics Platform",
+            title: "Get Job Ready: Power BI Data Analytics for All Levels 3.0",
+            status: "Verified Credential",
+            certId: "CB-49-579515",
+            certUrl: "https://codebasics.io/certificate/CB-49-579515",
+            desc: "Comprehensive certification covering end-to-end Power BI analytics, complex DAX measures, data modeling, automated ETL refreshes, and executive dashboard development.",
+            details: "This certification validates complete proficiency in building enterprise-grade Power BI business intelligence solutions. Key competencies include advanced data modeling across 10+ relational tables, complex DAX calculations (Time Intelligence, CALCULATE, RankX), automated ETL refreshes via Power Query, and designing executive multi-page dashboards with drill-through capabilities.",
+            skills: ["Power BI", "DAX Measures", "Power Query", "Data Modeling", "Business Intelligence", "Star Schema"],
+            previewImg: "https://images.codebasics.io/filters:format(webp)/fit-in/650x650/uploads/learner-portfolio/projects/screenshot/579515/68b4025a1b813/69069e9b05.png"
+        },
+        {
+            badge: "Codebasics Certified",
+            issuer: "Codebasics Platform",
+            title: "SQL Beginner to Advanced For Data Professionals",
+            status: "Verified Credential",
+            certId: "CB-50-579515",
+            certUrl: "https://codebasics.io/certificate/CB-50-579515",
+            desc: "Advanced database engineering certification demonstrating mastery in writing complex T-SQL queries, window functions, stored procedures, subqueries, and performance tuning.",
+            details: "Validates advanced SQL query engineering and relational database design. Demonstrates expertise in writing complex multi-table JOIN queries, window functions (ROW_NUMBER, DENSE_RANK, LEAD, LAG), performance tuning via indexing strategies, creating automated stored procedures and dynamic database views.",
+            skills: ["SQL Server", "Window Functions", "Stored Procedures", "Query Optimization", "Database Indexing", "T-SQL"],
+            previewImg: "https://images.codebasics.io/filters:format(webp)/fit-in/650x650/uploads/learner-portfolio/projects/screenshot/579515/68b3dfb7533a6/6bbd1e8fe4.png"
+        },
+        {
+            badge: "Codebasics Certified",
+            issuer: "Codebasics Platform",
+            title: "Excel: Mother of Business Intelligence",
+            status: "Verified Credential",
+            certId: "CB-51-579515",
+            certUrl: "https://codebasics.io/certificate/CB-51-579515",
+            desc: "Foundational business intelligence certification focusing on advanced Excel data wrangling, dynamic pivot tables, Power Query data transformations, and automated reporting routines.",
+            details: "Validates comprehensive mastery over Microsoft Excel for business analytics and data reporting. Focuses on Power Query ETL routines, dynamic Pivot Tables, nested formulas (VLOOKUP, INDEX/MATCH, XLOOKUP), conditional formatting, and creating interactive sales & financial dashboards.",
+            skills: ["Excel BI", "Pivot Tables", "Power Query", "Data Cleansing", "Financial Modeling", "Macros"],
+            previewImg: "https://images.codebasics.io/filters:format(webp)/fit-in/650x650/uploads/learner-portfolio/projects/screenshot/579515/68b3dfb765227/fbdbde466f.png"
+        }
+    ];
+
     const projectModal = document.getElementById('project-modal');
     const modalDynamicContent = document.getElementById('modal-dynamic-content');
     const modalClose = document.getElementById('modal-close');
     let currentSlide = 0;
     let modalScreenshots = [];
 
-    // Trigger details modal open
     function openProjectModal(index) {
         const project = projectsData[index];
         if (!project) return;
@@ -224,10 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSlide = 0;
         modalScreenshots = project.screenshots || [];
 
-        // Build tech tags HTML
         const techTagsHtml = project.tech.map(t => `<span class="modal-tool-tag">${t}</span>`).join('');
 
-        // Build screenshots carousel HTML
         let carouselHtml = '';
         if (modalScreenshots.length > 0) {
             const slidesHtml = modalScreenshots.map((shot, idx) => `
@@ -252,7 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
-        // Build links HTML
         let linksHtml = '';
         if (project.github) {
             linksHtml += `<a href="${project.github}" target="_blank" rel="noopener noreferrer" class="modal-btn-link github"><i class="bi bi-github"></i> GitHub Repository</a>`;
@@ -260,37 +305,46 @@ document.addEventListener('DOMContentLoaded', () => {
         if (project.linkedin) {
             linksHtml += `<a href="${project.linkedin}" target="_blank" rel="noopener noreferrer" class="modal-btn-link linkedin"><i class="bi bi-linkedin"></i> LinkedIn Post</a>`;
         }
-
-        // Build Video Embed HTML
-        let videoHtml = '';
         if (project.youtube) {
-            videoHtml = `
-                <div class="media-embed-section">
-                    <h4>Project Walkthrough Video</h4>
-                    <div class="embed-responsive-container">
-                        <iframe src="${project.youtube}" title="${project.title} video preview" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                    </div>
-                </div>
-            `;
+            const watchUrl = project.youtube.replace('/embed/', '/watch?v=');
+            linksHtml += `<a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="modal-btn-link youtube"><i class="bi bi-youtube"></i> Watch Video</a>`;
         }
 
-        // Build Power BI Embed HTML
+        let videoHtml = '';
+        if (project.youtube) {
+            const videoId = project.youtube.split('/embed/')[1];
+            if (videoId) {
+                const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+                const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                videoHtml = `
+                    <div class="modal-video-section" style="margin-top: 24px;">
+                        <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main);">Video Walkthrough</h4>
+                        <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="video-thumbnail-card">
+                            <img src="${thumbnailUrl}" alt="Watch ${project.title} Video Walkthrough" />
+                            <div class="video-play-overlay">
+                                <div class="play-icon-circle"><i class="bi bi-play-fill"></i></div>
+                                <span>Watch Walkthrough on YouTube</span>
+                            </div>
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
         let powerBiHtml = '';
         if (project.powerbi) {
             powerBiHtml = `
-                <div class="media-embed-section">
-                    <h4>Live Interactive Dashboard</h4>
-                    <div class="embed-responsive-container">
-                        <iframe src="${project.powerbi}" title="${project.title} Live Dashboard" allowfullscreen></iframe>
-                    </div>
+                <div class="modal-powerbi-section" style="margin-top: 24px;">
+                    <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main);">Interactive Dashboard Report</h4>
+                    <a href="${project.powerbi}" target="_blank" rel="noopener noreferrer" class="modal-btn-link linkedin" style="width: 100%; justify-content: center; padding: 14px; background: #f2c811; color: #000;">
+                        <i class="bi bi-bar-chart-fill"></i> Open Live Interactive Power BI Report
+                    </a>
                 </div>
             `;
         }
 
-        // Combine left column (info) and right column (visuals/media)
         modalDynamicContent.innerHTML = `
             <div class="modal-grid">
-                <!-- Left Column -->
                 <div class="modal-info-col">
                     <div class="modal-header-section">
                         <div class="modal-badge-row">
@@ -321,7 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${linksHtml ? `<div class="modal-links-row">${linksHtml}</div>` : ''}
                 </div>
 
-                <!-- Right Column -->
                 <div class="modal-visuals-col">
                     ${carouselHtml}
                     ${videoHtml}
@@ -330,7 +383,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Add event listeners for carousel buttons if they exist
         const prevBtn = document.getElementById('carousel-prev');
         const nextBtn = document.getElementById('carousel-next');
 
@@ -339,12 +391,75 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.addEventListener('click', showNextSlide);
         }
 
-        // Open modal
         projectModal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // prevent scrolling main page
+        document.body.style.overflow = 'hidden';
     }
 
-    // Carousel transition controls
+    function openCertModal(index) {
+        const cert = certificationsData[index];
+        if (!cert) return;
+
+        const skillsTagsHtml = cert.skills.map(s => `<span class="modal-tool-tag">${s}</span>`).join('');
+        const isMs = cert.badge.includes("Microsoft");
+        const badgeStyle = isMs ? "background: #eff6ff; color: #2563eb; border: 1px solid rgba(37,99,235,0.2);" : "background: #ecfdf5; color: #059669; border: 1px solid rgba(5,150,105,0.2);";
+        const btnStyle = isMs ? "background: #2563eb; color: #ffffff;" : "background: #059669; color: #ffffff;";
+        const badgeIcon = isMs ? '<i class="bi bi-patch-check-fill"></i>' : '<i class="bi bi-shield-check"></i>';
+
+        modalDynamicContent.innerHTML = `
+            <div class="modal-grid">
+                <div class="modal-info-col">
+                    <div class="modal-header-section">
+                        <div class="modal-badge-row">
+                            <span class="modal-project-badge" style="${badgeStyle}">${badgeIcon} ${cert.badge}</span>
+                        </div>
+                        <h2 class="modal-title" style="margin-top: 8px;">${cert.title}</h2>
+                        <p class="modal-domain">Credential ID: <strong>${cert.certId}</strong> • Status: <span style="color: ${isMs ? '#2563eb' : '#059669'}; font-weight: 700;">${cert.status}</span></p>
+                    </div>
+
+                    <div class="modal-desc-section">
+                        <h4>Overview</h4>
+                        <p class="modal-desc-text">${cert.desc}</p>
+                    </div>
+
+                    <div class="modal-details-section">
+                        <h4>Skills & Competencies Validated</h4>
+                        <p class="modal-details-text">${cert.details}</p>
+                    </div>
+
+                    <div class="modal-tools-section">
+                        <h4>Core Topics Certified</h4>
+                        <div class="modal-tools-list">
+                            ${skillsTagsHtml}
+                        </div>
+                    </div>
+
+                    <div class="modal-links-row" style="margin-top: 24px;">
+                        <a href="${cert.certUrl}" target="_blank" rel="noopener noreferrer" class="modal-btn-link" style="${btnStyle} width: 100%; justify-content: center; font-size: 1rem; padding: 14px 20px;">
+                            <i class="bi bi-box-arrow-up-right"></i> Verify Official Credential (${cert.certId})
+                        </a>
+                    </div>
+                </div>
+
+                <div class="modal-visuals-col">
+                    <div class="modal-carousel" style="margin-bottom: 0;">
+                        <div class="carousel-slide active" style="text-align: center; padding: 24px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <img src="${cert.previewImg}" alt="${cert.title} Badge Preview" style="max-height: 280px; width: auto; max-width: 100%; margin: 0 auto; display: block; border-radius: var(--border-radius-lg); object-fit: contain;" onerror="this.style.display='none'; document.getElementById('badge-fallback-${index}').style.display='flex';" />
+                            <div id="badge-fallback-${index}" style="display: none; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; background: var(--color-primary-light); border: 2px dashed var(--color-primary); border-radius: var(--border-radius-xl); width: 100%;">
+                                <i class="bi bi-patch-check-fill" style="font-size: 4rem; color: var(--color-primary); margin-bottom: 12px;"></i>
+                                <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">${cert.title}</h3>
+                                <span style="font-size: 0.9rem; font-weight: 700; color: var(--color-primary);">Credential ID: ${cert.certId}</span>
+                            </div>
+                            <div class="carousel-caption" style="margin-top: 16px; width: 100%;">Official Verified Credential Badge (${cert.certId})</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        projectModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
     function showSlide(index) {
         const slides = document.querySelectorAll('.carousel-slide');
         if (slides.length === 0) return;
@@ -362,18 +477,15 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide - 1);
     }
 
-    // Close details modal
     function closeProjectModal() {
         projectModal.classList.remove('active');
-        document.body.style.overflow = ''; // restore scrolling
+        document.body.style.overflow = '';
 
-        // Crucial: clear embed iframe sources to stop video playback and loading
         const iframes = modalDynamicContent.querySelectorAll('iframe');
         iframes.forEach(iframe => {
             iframe.src = '';
         });
 
-        // Delay clearing HTML to allow fade animation to complete
         setTimeout(() => {
             if (!projectModal.classList.contains('active')) {
                 modalDynamicContent.innerHTML = '';
@@ -381,10 +493,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 400);
     }
 
-    // Setup event listeners for card clicks
     document.querySelectorAll('[data-project-index]').forEach(element => {
         element.addEventListener('click', (e) => {
-            // If user clicked an external repository/post anchor, don't open modal
             if (e.target.closest('a') && !e.target.closest('.btn-view-details')) {
                 return;
             }
@@ -394,17 +504,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close modal event listeners
+    document.querySelectorAll('[data-cert-index]').forEach(element => {
+        element.addEventListener('click', (e) => {
+            if (e.target.closest('.btn-cert-direct')) {
+                return;
+            }
+            e.preventDefault();
+            const index = parseInt(element.getAttribute('data-cert-index'));
+            openCertModal(index);
+        });
+    });
+
     modalClose.addEventListener('click', closeProjectModal);
 
-    // Close on overlay backdrop click
     projectModal.addEventListener('click', (e) => {
         if (e.target === projectModal || e.target.classList.contains('modal-wrapper')) {
             closeProjectModal();
         }
     });
 
-    // Close on Escape key press
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && projectModal.classList.contains('active')) {
             closeProjectModal();
