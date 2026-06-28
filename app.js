@@ -528,4 +528,18 @@ document.addEventListener('DOMContentLoaded', () => {
             closeProjectModal();
         }
     });
+
+    /* Certifications Horizontal Slider Scroll logic */
+    const certTrack = document.getElementById('certifications-track');
+    const certPrevBtn = document.getElementById('cert-scroll-prev');
+    const certNextBtn = document.getElementById('cert-scroll-next');
+
+    if (certTrack && certPrevBtn && certNextBtn) {
+        certNextBtn.addEventListener('click', () => {
+            certTrack.scrollBy({ left: 460, behavior: 'smooth' });
+        });
+        certPrevBtn.addEventListener('click', () => {
+            certTrack.scrollBy({ left: -460, behavior: 'smooth' });
+        });
+    }
 });

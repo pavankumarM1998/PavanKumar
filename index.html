@@ -427,120 +427,126 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
+    <!-- Certifications Section (Interactive Horizontal Scroll Slider) -->
     <section class="section certifications-section" id="certifications">
         <div class="section-container">
             <h2 class="section-title">Certifications & Achievements</h2>
             <p class="section-subtitle">Official verified professional certifications and Microsoft credentials.</p>
             
-            <div class="certifications-grid">
-                <!-- Cert 1: Microsoft Fabric Data Engineer Associate -->
-                <div class="cert-card reveal" data-cert-index="0">
-                    <div>
-                        <div class="cert-header">
-                            <div class="cert-issuer-badge ms-badge">
-                                <i class="bi bi-patch-check-fill"></i> Microsoft Certified
+            <div class="certifications-slider-container">
+                <button class="cert-scroll-btn prev" id="cert-scroll-prev" aria-label="Scroll left"><i class="bi bi-chevron-left"></i></button>
+                
+                <div class="certifications-grid" id="certifications-track">
+                    <!-- Cert 1: Microsoft Fabric Data Engineer Associate -->
+                    <div class="cert-card reveal" data-cert-index="0">
+                        <div>
+                            <div class="cert-header">
+                                <div class="cert-issuer-badge ms-badge">
+                                    <i class="bi bi-patch-check-fill"></i> Microsoft Certified
+                                </div>
+                                <span class="cert-date">ID: DP-600</span>
                             </div>
-                            <span class="cert-date">ID: DP-600</span>
+                            <h3 class="cert-title">Microsoft Certified: Fabric Data Engineer Associate</h3>
+                            <p class="cert-issuer">Microsoft Certified Official Credential</p>
+                            <p class="cert-desc">Demonstrates expertise in designing, creating, and managing enterprise analytics solutions using Microsoft Fabric, OneLake, Data Factory pipelines, and PySpark.</p>
+                            <div class="cert-skills">
+                                <span class="tech-tag">Microsoft Fabric</span>
+                                <span class="tech-tag">OneLake</span>
+                                <span class="tech-tag">PySpark</span>
+                                <span class="tech-tag">DirectLake</span>
+                            </div>
                         </div>
-                        <h3 class="cert-title">Microsoft Certified: Fabric Data Engineer Associate</h3>
-                        <p class="cert-issuer">Microsoft Certified Official Credential</p>
-                        <p class="cert-desc">Demonstrates expertise in designing, creating, and managing enterprise analytics solutions using Microsoft Fabric, OneLake, Data Factory pipelines, and PySpark.</p>
-                        <div class="cert-skills">
-                            <span class="tech-tag">Microsoft Fabric</span>
-                            <span class="tech-tag">OneLake</span>
-                            <span class="tech-tag">PySpark</span>
-                            <span class="tech-tag">DirectLake</span>
+                        <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 16px;">
+                            <span class="cert-view-link">View Details <i class="bi bi-arrow-right"></i></span>
+                            <a href="https://learn.microsoft.com/credentials/certifications/fabric-data-engineer-associate/" target="_blank" rel="noopener noreferrer" class="btn-cert-direct ms-btn-direct" onclick="event.stopPropagation();">
+                                <i class="bi bi-box-arrow-up-right"></i> Microsoft Credential
+                            </a>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 16px;">
-                        <span class="cert-view-link">View Details <i class="bi bi-arrow-right"></i></span>
-                        <a href="https://learn.microsoft.com/credentials/certifications/fabric-data-engineer-associate/" target="_blank" rel="noopener noreferrer" class="btn-cert-direct ms-btn-direct" onclick="event.stopPropagation();">
-                            <i class="bi bi-box-arrow-up-right"></i> Microsoft Credential
-                        </a>
+
+                    <!-- Cert 2 -->
+                    <div class="cert-card reveal" data-cert-index="1">
+                        <div>
+                            <div class="cert-header">
+                                <div class="cert-issuer-badge cb-badge">
+                                    <i class="bi bi-shield-check"></i> Codebasics Certified
+                                </div>
+                                <span class="cert-date">ID: CB-49-579515</span>
+                            </div>
+                            <h3 class="cert-title">Get Job Ready: Power BI Data Analytics for All Levels 3.0</h3>
+                            <p class="cert-issuer">Codebasics Official Certificate</p>
+                            <p class="cert-desc">Comprehensive certification covering end-to-end Power BI analytics, complex DAX measures, data modeling, automated ETL refreshes, and executive dashboard development.</p>
+                            <div class="cert-skills">
+                                <span class="tech-tag">Power BI</span>
+                                <span class="tech-tag">DAX Measures</span>
+                                <span class="tech-tag">Power Query</span>
+                                <span class="tech-tag">Data Modeling</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 16px;">
+                            <span class="cert-view-link">View Details <i class="bi bi-arrow-right"></i></span>
+                            <a href="https://codebasics.io/certificate/CB-49-579515" target="_blank" rel="noopener noreferrer" class="btn-cert-direct" onclick="event.stopPropagation();">
+                                <i class="bi bi-box-arrow-up-right"></i> Official Certificate
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="cert-card reveal" data-cert-index="2">
+                        <div>
+                            <div class="cert-header">
+                                <div class="cert-issuer-badge cb-badge">
+                                    <i class="bi bi-shield-check"></i> Codebasics Certified
+                                </div>
+                                <span class="cert-date">ID: CB-50-579515</span>
+                            </div>
+                            <h3 class="cert-title">SQL Beginner to Advanced For Data Professionals</h3>
+                            <p class="cert-issuer">Codebasics Official Certificate</p>
+                            <p class="cert-desc">Advanced database engineering certification demonstrating mastery in writing complex T-SQL queries, window functions, stored procedures, subqueries, and performance tuning.</p>
+                            <div class="cert-skills">
+                                <span class="tech-tag">SQL Server</span>
+                                <span class="tech-tag">Window Functions</span>
+                                <span class="tech-tag">Stored Procedures</span>
+                                <span class="tech-tag">Query Optimization</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 16px;">
+                            <span class="cert-view-link">View Details <i class="bi bi-arrow-right"></i></span>
+                            <a href="https://codebasics.io/certificate/CB-50-579515" target="_blank" rel="noopener noreferrer" class="btn-cert-direct" onclick="event.stopPropagation();">
+                                <i class="bi bi-box-arrow-up-right"></i> Official Certificate
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4 -->
+                    <div class="cert-card reveal" data-cert-index="3">
+                        <div>
+                            <div class="cert-header">
+                                <div class="cert-issuer-badge cb-badge">
+                                    <i class="bi bi-shield-check"></i> Codebasics Certified
+                                </div>
+                                <span class="cert-date">ID: CB-51-579515</span>
+                            </div>
+                            <h3 class="cert-title">Excel: Mother of Business Intelligence</h3>
+                            <p class="cert-issuer">Codebasics Official Certificate</p>
+                            <p class="cert-desc">Foundational business intelligence certification focusing on advanced Excel data wrangling, dynamic pivot tables, Power Query data transformations, and automated reporting routines.</p>
+                            <div class="cert-skills">
+                                <span class="tech-tag">Excel BI</span>
+                                <span class="tech-tag">Pivot Tables</span>
+                                <span class="tech-tag">Power Query</span>
+                                <span class="tech-tag">Data Cleansing</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 16px;">
+                            <span class="cert-view-link">View Details <i class="bi bi-arrow-right"></i></span>
+                            <a href="https://codebasics.io/certificate/CB-51-579515" target="_blank" rel="noopener noreferrer" class="btn-cert-direct" onclick="event.stopPropagation();">
+                                <i class="bi bi-box-arrow-up-right"></i> Official Certificate
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Cert 2 -->
-                <div class="cert-card reveal" data-cert-index="1">
-                    <div>
-                        <div class="cert-header">
-                            <div class="cert-issuer-badge cb-badge">
-                                <i class="bi bi-shield-check"></i> Codebasics Certified
-                            </div>
-                            <span class="cert-date">ID: CB-49-579515</span>
-                        </div>
-                        <h3 class="cert-title">Get Job Ready: Power BI Data Analytics for All Levels 3.0</h3>
-                        <p class="cert-issuer">Codebasics Official Certificate</p>
-                        <p class="cert-desc">Comprehensive certification covering end-to-end Power BI analytics, complex DAX measures, data modeling, automated ETL refreshes, and executive dashboard development.</p>
-                        <div class="cert-skills">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">DAX Measures</span>
-                            <span class="tech-tag">Power Query</span>
-                            <span class="tech-tag">Data Modeling</span>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 16px;">
-                        <span class="cert-view-link">View Details <i class="bi bi-arrow-right"></i></span>
-                        <a href="https://codebasics.io/certificate/CB-49-579515" target="_blank" rel="noopener noreferrer" class="btn-cert-direct" onclick="event.stopPropagation();">
-                            <i class="bi bi-box-arrow-up-right"></i> Official Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Cert 3 -->
-                <div class="cert-card reveal" data-cert-index="2">
-                    <div>
-                        <div class="cert-header">
-                            <div class="cert-issuer-badge cb-badge">
-                                <i class="bi bi-shield-check"></i> Codebasics Certified
-                            </div>
-                            <span class="cert-date">ID: CB-50-579515</span>
-                        </div>
-                        <h3 class="cert-title">SQL Beginner to Advanced For Data Professionals</h3>
-                        <p class="cert-issuer">Codebasics Official Certificate</p>
-                        <p class="cert-desc">Advanced database engineering certification demonstrating mastery in writing complex T-SQL queries, window functions, stored procedures, subqueries, and performance tuning.</p>
-                        <div class="cert-skills">
-                            <span class="tech-tag">SQL Server</span>
-                            <span class="tech-tag">Window Functions</span>
-                            <span class="tech-tag">Stored Procedures</span>
-                            <span class="tech-tag">Query Optimization</span>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 16px;">
-                        <span class="cert-view-link">View Details <i class="bi bi-arrow-right"></i></span>
-                        <a href="https://codebasics.io/certificate/CB-50-579515" target="_blank" rel="noopener noreferrer" class="btn-cert-direct" onclick="event.stopPropagation();">
-                            <i class="bi bi-box-arrow-up-right"></i> Official Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Cert 4 -->
-                <div class="cert-card reveal" data-cert-index="3">
-                    <div>
-                        <div class="cert-header">
-                            <div class="cert-issuer-badge cb-badge">
-                                <i class="bi bi-shield-check"></i> Codebasics Certified
-                            </div>
-                            <span class="cert-date">ID: CB-51-579515</span>
-                        </div>
-                        <h3 class="cert-title">Excel: Mother of Business Intelligence</h3>
-                        <p class="cert-issuer">Codebasics Official Certificate</p>
-                        <p class="cert-desc">Foundational business intelligence certification focusing on advanced Excel data wrangling, dynamic pivot tables, Power Query data transformations, and automated reporting routines.</p>
-                        <div class="cert-skills">
-                            <span class="tech-tag">Excel BI</span>
-                            <span class="tech-tag">Pivot Tables</span>
-                            <span class="tech-tag">Power Query</span>
-                            <span class="tech-tag">Data Cleansing</span>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 16px;">
-                        <span class="cert-view-link">View Details <i class="bi bi-arrow-right"></i></span>
-                        <a href="https://codebasics.io/certificate/CB-51-579515" target="_blank" rel="noopener noreferrer" class="btn-cert-direct" onclick="event.stopPropagation();">
-                            <i class="bi bi-box-arrow-up-right"></i> Official Certificate
-                        </a>
-                    </div>
-                </div>
+                <button class="cert-scroll-btn next" id="cert-scroll-next" aria-label="Scroll right"><i class="bi bi-chevron-right"></i></button>
             </div>
         </div>
     </section>
