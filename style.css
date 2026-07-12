@@ -721,6 +721,7 @@ button {
 .project-card:nth-child(4) .project-icon-box { background: #fae8ff; color: #c084fc; }
 .project-card:nth-child(5) .project-icon-box { background: #ffe4e6; color: #e11d48; }
 .project-card:nth-child(6) .project-icon-box { background: #e0f2fe; color: #0284c7; }
+.project-card:nth-child(7) .project-icon-box { background: #e0e7ff; color: #4f46e5; }
 
 .project-title {
     font-family: var(--font-heading);

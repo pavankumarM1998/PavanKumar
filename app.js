@@ -103,6 +103,22 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const projectsData = [
         {
+            badge: "Streaming Ingestion & ETL",
+            toolIcon: '<i class="bi bi-car-front-fill" style="font-size: 24px; color: var(--color-primary);"></i>',
+            title: "Veyro: Streaming Data Pipeline",
+            domain: "Real-Time Data Engineering",
+            desc: "A production-grade, end-to-end streaming data engineering and BI analytics solution featuring real-time event ingestion, Databricks Medallion architecture, and an advanced dark-themed Power BI dashboard.",
+            details: "Veyro (pronounced VAY-ro) is a ride-booking simulation platform. Based on the real-time simulation data it generates, I built an end-to-end streaming data engineering and analytics pipeline.\n\nThe system utilizes a FastAPI portal simulating ride bookings to generate passenger details, coordinates, fares, and surge multipliers. This live stream is ingested into Azure Event Hubs via the Python SDK, captured by Azure Databricks (Bronze layer), parsed and cleaned using watermark event deduplication (Silver layer), and finally combined with lookup dimensions into a single One Big Table (OBT) Delta format (Gold layer).\n\nAdditionally, I implemented a developer-first reporting layer by programmatically engineering a 4-tab Power BI semantic model and visual layout (.pbip format) using agentic skills (powerbi-connect, powerbi-datamodelling, powerbi-reporting, powerbi-beautify). It features advanced DAX calculated columns/KPI metrics and a customized premium dark-theme layout served directly via Databricks SQL Warehouse.",
+            github: "https://github.com/pavankumarM1998/Veyro.git",
+            linkedin: "",
+            tech: ["FastAPI", "Azure Event Hubs", "Azure Databricks", "Delta Lake", "Medallion Architecture", "Power BI", "DAX", "TMDL", "Firebase Hosting/Functions"],
+            screenshots: [
+                { url: "veyro_architecture.png", caption: "Veyro Real-Time Streaming Data Pipeline Architecture Flow" }
+            ],
+            youtube: "",
+            powerbi: "https://app.powerbi.com/view?r=eyJrIjoiYmY2MmVmNGEtNDY0NC00MWQxLWJkOTctYzY5MzhjNTJhNTBlIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9"
+        },
+        {
             badge: "ADF & Cloud Project",
             toolIcon: '<i class="bi bi-cloud" style="font-size: 24px; color: var(--color-primary);"></i>',
             title: "Advanced ADF Data Pipelines",
