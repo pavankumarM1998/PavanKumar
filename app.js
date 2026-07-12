@@ -351,9 +351,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (project.powerbi) {
             powerBiHtml = `
                 <div class="modal-powerbi-section" style="margin-top: 24px;">
-                    <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main);">Interactive Dashboard Report</h4>
-                    <a href="${project.powerbi}" target="_blank" rel="noopener noreferrer" class="modal-btn-link linkedin" style="width: 100%; justify-content: center; padding: 14px; background: #f2c811; color: #000;">
-                        <i class="bi bi-bar-chart-fill"></i> Open Live Interactive Power BI Report
+                    <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main);">Interactive Live Report Preview</h4>
+                    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0,0,0,0.15); margin-bottom: 12px; box-shadow: var(--shadow-sm); background: #fcfcfc;">
+                        <iframe title="${project.title} Power BI Report" src="${project.powerbi}" frameborder="0" allowFullScreen="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    </div>
+                    <a href="${project.powerbi}" target="_blank" rel="noopener noreferrer" class="modal-btn-link" style="width: 100%; justify-content: center; padding: 12px; background: #f2c811; color: #000; font-weight: bold; border-radius: 6px; display: flex; align-items: center; gap: 8px;">
+                        <i class="bi bi-box-arrow-up-right"></i> Open Report in Full Window
                     </a>
                 </div>
             `;
