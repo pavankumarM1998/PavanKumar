@@ -1,5 +1,12 @@
 # Pavan Kumar - Personal Portfolio Web Application
 
+> 🌐 **Live Production Website**: [https://pavankumarm1998.github.io/PavanKumar/](https://pavankumarm1998.github.io/PavanKumar/)
+
+<p align="left">
+  <a href="https://pavankumarm1998.github.io/PavanKumar/" target="_blank"><img src="https://img.shields.io/badge/Live_Portfolio-Visit_Website-0078D4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Portfolio Website" /></a>
+  <a href="https://github.com/pavankumarM1998/PavanKumar" target="_blank"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+</p>
+
 Welcome to the official personal portfolio repository of **Pavan Kumar**, Senior Data Engineer & BI Specialist with 6+ years of experience building robust ETL/ELT pipelines, designing high-performance data models, and delivering executive-level business intelligence.
 
 This web application features a modern, responsive user interface designed with pure HTML, Vanilla CSS, and modern interactive JavaScript.
@@ -49,18 +56,19 @@ No external server setup or build tools are required to run this application.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/pavankumarM1998/Personal-Portfolio.git
+   git clone https://github.com/pavankumarM1998/PavanKumar.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd Personal-Portfolio
+   cd PavanKumar
    ```
-3. Open `index.html` directly in any web browser.
+3. Open `index.html` directly in any web browser, or view the live site at **[https://pavankumarm1998.github.io/PavanKumar/](https://pavankumarm1998.github.io/PavanKumar/)**.
 
 ---
 
 ## 📬 Contact & Connect
 
+- **Live Website**: [pavankumarm1998.github.io/PavanKumar/](https://pavankumarm1998.github.io/PavanKumar/)
 - **Email**: [pavankumar.m1432@gmail.com](mailto:pavankumar.m1432@gmail.com)
 - **LinkedIn**: [Pavan Kumar](https://www.linkedin.com/in/pavankumarbi)
 - **GitHub**: [@pavankumarM1998](https://github.com/pavankumarM1998)
