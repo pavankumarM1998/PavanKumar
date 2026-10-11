@@ -29,13 +29,16 @@ This web application features a modern, responsive user interface designed with 
 
 ```
 Personal-Portfolio/
-├── index.html              # Main application HTML page
-├── style.css               # Main production stylesheet (glassmorphism & layout)
-├── style-gold.css          # Alternate gold-themed stylesheet variant
-├── style-original.css      # Baseline backup stylesheet
-├── app.js                  # Interactive logic, scroll animations, and project modals
-├── adf_pipeline_architecture.png  # Architectural reference image asset
-└── README.md               # Project documentation
+├── index.html                        # Main application HTML page
+├── style.css                         # Main production stylesheet (glassmorphism & layout)
+├── style-gold.css                    # Alternate gold-themed stylesheet variant
+├── style-original.css                # Baseline backup stylesheet
+├── app.js                            # Interactive logic, scroll animations, and project modals
+├── fraud_detection_architecture.png  # Real-Time Fraud & Anomaly Detection Lakehouse Architecture
+├── customer_cdc_architecture.png     # Customer 360 Lakehouse CDC & SCD Type 2 Architecture
+├── veyro_architecture.png            # Veyro Streaming Architecture diagram
+├── adf_pipeline_architecture.png     # Azure Data Factory ELT Architecture diagram
+└── README.md                         # Project documentation
 ```
 
 ---

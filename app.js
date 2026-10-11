@@ -103,6 +103,38 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const projectsData = [
         {
+            badge: "Lakehouse & Real-Time ML",
+            toolIcon: '<i class="bi bi-shield-lock-fill" style="font-size: 24px; color: var(--color-primary);"></i>',
+            title: "Real-Time Transaction Fraud & Anomaly Detection Platform",
+            domain: "FinTech & Fraud Analytics",
+            desc: "A production-grade enterprise Lakehouse platform for real-time transaction processing, anomaly detection, rolling customer velocity windows (5m/10m), and low-latency machine learning inference powered by Databricks, Spark Structured Streaming, Delta Lake, Unity Catalog, and MLflow.",
+            details: "<strong>🚀 Project Summary</strong><br>A production-grade, enterprise Lakehouse platform for real-time transaction processing, anomaly detection, rolling velocity feature calculation, and low-latency machine learning inference powered by Databricks, Apache Spark Structured Streaming, Delta Lake, Unity Catalog, and MLflow.<br><br><strong>📊 System Architecture</strong><br><pre style='background: #1e1e24; color: #abb2bf; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; line-height: 1.4; overflow-x: auto; margin: 8px 0;'>FastAPI Simulator & Incoming Feeds (/Volumes/fraud_dev/staging/)\n          │\n          ▼\nBronze Layer (Auto Loader with Schema Evolution & Quarantine Routing)\n          │\n          ▼\nSilver Layer (Spark Structured Streaming + 30m Watermarking + Deduplication)\n          │\n          ▼\nFeature Store & Velocity Windows (5-min & 10-min Customer Burst Tracking)\n          │\n          ▼\nMLflow Model Governance & Dynamic Model Resolution (PR-AUC Optimized)\n          │\n          ▼\nGold Decision Layer (BLOCK / REVIEW / ALLOW Actions + Balance Reconciliation)</pre><br><strong>✨ Key Features</strong><br>• <strong>Medallion Lakehouse Processing:</strong> Staging in Unity Catalog Volumes, append-only raw ingestion via Auto Loader, cleansed and typed Silver domain entities with quarantine routing for rejects, and business decision tier in Gold.<br>• <strong>Real-Time Streaming & Watermarking:</strong> Micro-batch Spark Structured Streaming with stateful deduplication and 30-minute late-data watermarking to avoid unbounded memory expansion.<br>• <strong>Rolling Velocity Windows:</strong> Real-time customer transaction burst features over 5-minute and 10-minute sliding windows combined with historical baseline ratios.<br>• <strong>MLflow Model Governance:</strong> Models optimized for PR-AUC registered under Unity Catalog (<code>fraud_dev.ml.fraud_detection_model</code>), with zero-downtime active model resolution via control status tables.<br>• <strong>Reconciliation & Idempotency:</strong> Automated mathematical verification (Bronze = Silver + Quarantine) and fault recovery replay testing.<br><br><strong>💡 Engineering Highlights</strong><br>• Sub-second anomaly routing and deterministic high-value rule filtering.<br>• Unity Catalog Volumes governance and Databricks Asset Bundles (DAB) CI/CD automation.<br>• Complete cross-layer auditability and automated file archiving.",
+            github: "https://github.com/pavankumarM1998/Real-Time-Transaction-Fraud-Anomaly-Detection-Platform",
+            linkedin: "",
+            tech: ["Databricks", "Spark Streaming", "Delta Lake", "Unity Catalog", "MLflow", "PySpark", "DAB", "Python"],
+            screenshots: [
+                { url: "fraud_detection_architecture.png", caption: "Databricks Lakehouse Real-Time Fraud & Anomaly Detection Pipeline Architecture" }
+            ],
+            youtube: "",
+            powerbi: ""
+        },
+        {
+            badge: "Lakehouse CDC & SCD Type 2",
+            toolIcon: '<i class="bi bi-person-lines-fill" style="font-size: 24px; color: var(--color-primary);"></i>',
+            title: "Customer 360 CDC Platform",
+            domain: "Customer Analytics & Lakehouse",
+            desc: "A production-grade Databricks Lakehouse platform executing end-to-end Change Data Capture (CDC), Slowly Changing Dimensions (SCD Type 2), and Medallion Architecture processing for Customer 360 analytics orchestrated with Databricks Asset Bundles (DAB).",
+            details: "<strong>🚀 Project Summary</strong><br>An enterprise data engineering platform built on Databricks Lakehouse, leveraging Delta Lake, Unity Catalog, and Databricks Asset Bundles (DAB) to build a 360-degree customer view with full historical dimension tracking.<br><br><strong>📊 System Architecture</strong><br><pre style='background: #1e1e24; color: #abb2bf; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; line-height: 1.4; overflow-x: auto; margin: 8px 0;'>Source Ingestion Feeds (/Volumes/customer360_dev/staging/source_files/)\n          │\n          ▼\nBronze Layer (Raw Delta Tables across 8 Domains with Schema Validation)\n          │\n          ▼\nSilver Layer (Cleansed, Standardized, Deduplicated Entities & Quality Rules)\n          │\n          ▼\nGold Analytical Layer (SCD Type 2 History, Fact Tables & agg_customer_360)\n          │\n          ▼\nDatabricks Asset Bundles (DAB) Orchestration, Watermarking & Audit Controls</pre><br><strong>✨ Key Features</strong><br>• <strong>Medallion Lakehouse Architecture:</strong> Multi-layer refinement across 8 domains (customers, addresses, subscriptions, products, orders, order items, payments, support tickets).<br>• <strong>Incremental CDC Processing:</strong> Automated change detection (INSERT, UPDATE, DELETE) with watermark tracking and reconciliation controls.<br>• <strong>Slowly Changing Dimensions (SCD Type 2):</strong> Complete historical versioning (<code>effective_start_date</code>, <code>effective_end_date</code>, <code>is_current</code>) for customer dimensions.<br>• <strong>Unity Catalog Governance:</strong> Centralized data governance, schema isolation, volume management, and fine-grained access control.<br>• <strong>DAB Workflows:</strong> Modular Databricks Asset Bundles for initial and incremental master pipelines with failure recovery and restore routines.",
+            github: "https://github.com/pavankumarM1998/Customer-360-CDC-Platform",
+            linkedin: "",
+            tech: ["Databricks", "Delta Lake", "Unity Catalog", "CDC", "SCD Type 2", "PySpark", "DAB", "SQL"],
+            screenshots: [
+                { url: "customer_cdc_architecture.png", caption: "Customer 360 Databricks Lakehouse Medallion Architecture & SCD Type 2 Flow" }
+            ],
+            youtube: "",
+            powerbi: ""
+        },
+        {
             badge: "Streaming Ingestion & ETL",
             toolIcon: '<i class="bi bi-car-front-fill" style="font-size: 24px; color: var(--color-primary);"></i>',
             title: "Veyro: End-to-End Real-Time Stream-to-Report Data Engineering Pipeline",
